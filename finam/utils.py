@@ -1,6 +1,5 @@
 import re
-import collections
-import six
+import collections.abc
 from operator import attrgetter
 from urllib.request import Request
 
@@ -10,8 +9,8 @@ from .config import FINAM_CHARSET, FINAM_TRUSTED_USER_AGENT
 
 
 def is_container(val):
-    return isinstance(val, collections.Container)\
-             and not isinstance(val, six.string_types) \
+    return isinstance(val, collections.abc.Container)\
+             and not isinstance(val, str) \
              and not isinstance(val, bytes)
 
 
